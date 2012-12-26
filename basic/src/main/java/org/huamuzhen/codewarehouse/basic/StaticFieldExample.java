@@ -1,8 +1,8 @@
 package org.huamuzhen.codewarehouse.basic;
 
 /**
- * check the running sequence of static field
- * and Constructor. static block run first
+ * check the running sequence of static field, static block
+ * and constructor. 
  * */
 public class StaticFieldExample {
 	
