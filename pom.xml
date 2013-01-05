@@ -12,6 +12,7 @@
 	<modules>
 		<module>basic</module>
 		<module>concurrent</module>
+		<module>jvm</module>
 	</modules>
 	
 	<properties>
