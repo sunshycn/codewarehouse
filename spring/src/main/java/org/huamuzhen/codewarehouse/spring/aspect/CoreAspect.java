@@ -13,10 +13,13 @@ public class CoreAspect {
 	@Around("org.huamuzhen.codewarehouse.spring.aspect.MyPointCuts.servicePointcut()")
 	public void aroundServiceHandle(ProceedingJoinPoint joinpoint) throws Throwable{
 	
+		try{
 		System.out.println("before method");
 		joinpoint.proceed();
 		System.out.println("after method");
-
+		}finally{
+			System.out.println("finally");
+		}
 	}
 	
 	@AfterThrowing(pointcut="org.huamuzhen.codewarehouse.spring.aspect.MyPointCuts.servicePointcut()",throwing="e")
