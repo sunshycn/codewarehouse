@@ -8,6 +8,7 @@ public class UserService {
 	
 	public void printUserName(User user){
 		System.out.println(user.getName());
+		throw new RuntimeException("exception");
 	}
 
 }

@@ -8,12 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ContextLoader {
 	
 	
-	public static void main(String args[]){
+	public static void main(String args[]) {
 		System.out.println("context Loading");
 		ApplicationContext context  = new ClassPathXmlApplicationContext("application-context.xml");
 		User user1 = (User)context.getBean("user");
 		UserService userService = (UserService)context.getBean("userService");
+		
 		userService.printUserName(user1);
+		
 		
 	}
 
