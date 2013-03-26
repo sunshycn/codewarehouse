@@ -11,9 +11,15 @@ import org.springframework.stereotype.Component;
 public class UserServiceImpl implements UserService {
 
 	@Override
-	public Response createUser(User user) {
+	public String createUser(User user) {
 		System.out.println(user.getName());
 		System.out.println(user.getAge());
+		return "ok";
+	}
+
+	@Override
+	public Response hello() {
+		// TODO Auto-generated method stub
 		return Response.status(Status.OK).build();
 	}
 
