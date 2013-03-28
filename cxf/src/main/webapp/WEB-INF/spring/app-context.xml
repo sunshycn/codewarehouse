@@ -21,6 +21,9 @@
   	<jaxrs:serviceBeans>
   		<ref bean="helloService" />
   		<ref bean="userService" />
+  		<ref bean="groupUserService" />
+  		<ref bean="queryService" />
+  		<ref bean="plainService" />
   	</jaxrs:serviceBeans>
   	<jaxrs:providers>
 			<ref bean="jsonProvider" />

@@ -1,6 +1,6 @@
 package org.huamuzhen.model;
 
-public class CompositeQuery implements Query{
+public class CompositeQuery extends Query{
 	
 	public SingleQuery singleQuery1;
 

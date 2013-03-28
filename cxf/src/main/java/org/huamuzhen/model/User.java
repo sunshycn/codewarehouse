@@ -43,4 +43,48 @@ public class User {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", age=" + age + "]";
+	}
+	
+	public static class Builder {
+		private String name = "";
+		private int age = 0;
+		
+		public Builder name(String name){
+			this.name = name;
+			return this;
+		}
+		
+		public Builder age(int age){
+			this.age = age;
+			return this;
+		}
+		
+		public User build(){
+			return new User(this);
+		}
+		
+	}
+	
+	public User(Builder builder){
+		this.name = builder.name;
+		this.age = builder.age;
+	}
+	
+	public User(){
+	}
+	
+/*	public User name(String name){
+		this.name = name;
+		return this;
+	}
+	
+	public User age(int age){
+		this.age = age;
+		return this;
+	}*/
+	
 }

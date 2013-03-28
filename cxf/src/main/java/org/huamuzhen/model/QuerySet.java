@@ -1,6 +1,6 @@
 package org.huamuzhen.model;
 
-public class QuerySet implements Query{
+public class QuerySet extends Query{
 
 	public Query query1;
 	

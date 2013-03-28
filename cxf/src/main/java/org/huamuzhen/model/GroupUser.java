@@ -1,5 +1,8 @@
 package org.huamuzhen.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -12,55 +15,56 @@ import org.codehaus.jackson.annotate.JsonMethod;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "query", propOrder = {
-		"attribute","value","operator"
+@XmlType(name = "GroupUser", propOrder = {
+		"groupName","users","attrs"
 })
 @XmlRootElement
 @JsonIgnoreProperties(ignoreUnknown=true)
 @JsonAutoDetect(value=JsonMethod.NONE)
-public class SingleQuery extends Query{
+public class GroupUser {
 	
 	@XmlElement
 	@JsonProperty
-	public String attribute;
+	public String groupName;
 	
 	@XmlElement
 	@JsonProperty
-	public String value;
+	public List<User> users = new ArrayList<User>(0);
 	
 	@XmlElement
 	@JsonProperty
-	public Operator operator;
+	public List<String> attrs = new ArrayList<String>(0);
 
-	
-	public String getAttribute() {
-		return attribute;
+	public String getGroupName() {
+		return groupName;
 	}
 
-	public void setAttribute(String attribute) {
-		this.attribute = attribute;
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
-	public String getValue() {
-		return value;
+	public List<User> getUsers() {
+		return users;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
-	public Operator getOperator() {
-		return operator;
+	public List<String> getAttrs() {
+		return attrs;
 	}
 
-	public void setOperator(Operator operator) {
-		this.operator = operator;
+	public void setAttrs(List<String> attrs) {
+		this.attrs = attrs;
 	}
 
 	@Override
 	public String toString() {
-		return "SingleQuery [attribute=" + attribute + ", value=" + value
-				+ ", operator=" + operator + "]";
+		return "GroupUser [groupName=" + groupName + ", users=" + users
+				+ ", attrs=" + attrs + "]";
 	}
+	
+	
 
 }
