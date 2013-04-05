@@ -52,6 +52,10 @@ public final class ObjectJSONMapUtil {
 		s.setOperator(Operator.EQUALS);
 		System.out.println(ObjectToJSON(s));
 		
+		String a="ac";
+		a+="fff";
+		System.out.println(a);
+		
 	}
 
 }
