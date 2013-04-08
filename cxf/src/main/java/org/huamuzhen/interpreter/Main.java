@@ -5,6 +5,17 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.huamuzhen.interpreter.operator.BeginsWithInterpreter;
+import org.huamuzhen.interpreter.operator.ContainsInterpreter;
+import org.huamuzhen.interpreter.operator.EndsWithInterpreter;
+import org.huamuzhen.interpreter.operator.EqualsInterpreter;
+import org.huamuzhen.interpreter.operator.GreaterThanInterpreter;
+import org.huamuzhen.interpreter.operator.GreaterThanOrEqualToInterpreter;
+import org.huamuzhen.interpreter.operator.InInterpreter;
+import org.huamuzhen.interpreter.operator.LessThanInterpreter;
+import org.huamuzhen.interpreter.operator.LessThanOrEqualToInterpreter;
+import org.huamuzhen.interpreter.operator.NotContainsInterpreter;
+import org.huamuzhen.interpreter.operator.NotEqualsInterpreter;
 import org.huamuzhen.interpreter.operator.OperatorInterpreter;
 
 public class Main {
@@ -15,8 +26,19 @@ public class Main {
 	
 	public static HashSet<OperatorInterpreter> interpreterSet = new HashSet<OperatorInterpreter>();
 	
+	// will use spring xml to configure
 	static{
-		//interpreterSet.add(new );
+		interpreterSet.add(BeginsWithInterpreter.INSTANCE);
+		interpreterSet.add(ContainsInterpreter.INSTANCE);
+		interpreterSet.add(EndsWithInterpreter.INSTANCE);
+		interpreterSet.add(EqualsInterpreter.INSTANCE);
+		interpreterSet.add(GreaterThanInterpreter.INSTANCE);
+		interpreterSet.add(GreaterThanOrEqualToInterpreter.INSTANCE);
+		interpreterSet.add(InInterpreter.INSTANCE);
+		interpreterSet.add(LessThanInterpreter.INSTANCE);
+		interpreterSet.add(LessThanOrEqualToInterpreter.INSTANCE);
+		interpreterSet.add(NotContainsInterpreter.INSTANCE);
+		interpreterSet.add(NotEqualsInterpreter.INSTANCE);
 	}
 	
 	public static void main(String args[]){
