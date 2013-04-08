@@ -1,19 +1,40 @@
 package org.huamuzhen.interpreter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.huamuzhen.interpreter.operator.OperatorInterpreter;
 
 public class Main {
 	
+	public static final String AND = " AND ";
+	
+	public static final String OR = " OR ";
+	
+	public static HashSet<OperatorInterpreter> interpreterSet = new HashSet<OperatorInterpreter>();
+	
+	static{
+		//interpreterSet.add(new );
+	}
+	
 	public static void main(String args[]){
 		
-		
+		StringBuilder solrQuery = new StringBuilder();
 		String script = "(product_name CONTAINS  'gui tars' OR item_status IN ('Retired','UnRetired','Published')) AND modified_by EQUALS ‘sanveka'";
+System.out.println(script);
+		List<String> subSolrQueryStatementList = new ArrayList<String>();
+		List<String> subScriptList = new ArrayList<String>();
+		splitScriptToSubScriptListByCondition(script.trim(),subScriptList);
+System.out.println(subScriptList.size());
+		for(String subScript: subScriptList){
+			System.out.println(subScript);
+			solrQuery.append(interpretSubScript(subScript));
+		}
+System.out.println(solrQuery.toString());
 		
-		System.out.println(script);
-		script = script.trim();
-	
-		int index = 0;
+	/*	int index = 0;
 		int start = 0;
 		boolean singleQuoteNeed = false;
 		List<CharSequence> words = new ArrayList<CharSequence>();
@@ -33,6 +54,8 @@ public class Main {
 				start = index;
 			} else if (c == '\'') {
 				singleQuoteNeed = !singleQuoteNeed;
+			}else if(c == ','){
+				
 			}
 
 			index++;
@@ -43,8 +66,58 @@ public class Main {
 
 		for (CharSequence word : words) {
 			System.out.println(word);
-		}
+		}*/
 		
 	}
+	
+	private static String interpretSubScript(String subScript) {
+		if(subScript.equalsIgnoreCase(AND) || subScript.equalsIgnoreCase(OR) ){
+			return subScript;
+		}else{
+			//SingleScriptQueryIntercepterSet
+		}
+		return null;
+	}
+
+	
+	private static void splitScriptToSubScriptListByCondition(final String script,final List<String>  subScriptList) {
+		
+		int indexOfAnd = StringUtils.indexOfIgnoreCase(script,AND);
+		int indexOfOr = StringUtils.indexOfIgnoreCase(script, OR);
+		int index=-1;
+		String condition="";
+		if(indexOfAnd == -1 && indexOfOr == -1){
+			// no matching Condition found.
+			subScriptList.add(script);
+		
+		}else if (indexOfAnd == -1){
+			index = indexOfOr;
+			condition = OR;
+		}else if (indexOfOr == -1){
+			index = indexOfAnd;
+			condition = AND;
+		}else{
+		    index = indexOfAnd<indexOfOr?indexOfAnd:indexOfOr;
+			condition = indexOfAnd<indexOfOr?AND:OR;
+			
+		}
+		String leftScript = StringUtils.substring(script, 0, index);
+		subScriptList.add(leftScript);
+		subScriptList.add(condition);
+		String rightScript = StringUtils.substring(script, index+condition.length(), script.length());
+		splitScriptToSubScriptListByCondition(rightScript,subScriptList);
+		
+	}
+
+	/**
+	 * to make the input script to be in a standard format, so it will be easy for parsing.
+	 * 1. trim the script String
+	 * 2. add SPACE after some special characters, 
+	 * */
+	public static String formatScript(String script){
+		
+		return null;
+	}
+	
 
 }
