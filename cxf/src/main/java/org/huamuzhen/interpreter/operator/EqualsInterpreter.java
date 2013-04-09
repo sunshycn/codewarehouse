@@ -6,13 +6,14 @@ public final class EqualsInterpreter extends OperatorInterpreter{
 	public final static EqualsInterpreter INSTANCE = new EqualsInterpreter();
 	
 	private EqualsInterpreter(){
-		representation.add(" = ");
-		representation.add(" EQUALS ");
-	}
-	
-	@Override
-	public  String interpret(String input){
-		return null;
+		representationList.add(" = ");
+		representationList.add(" EQUALS ");
 	}
 
+	@Override
+	protected void fillInterpretedWordListInSequence(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

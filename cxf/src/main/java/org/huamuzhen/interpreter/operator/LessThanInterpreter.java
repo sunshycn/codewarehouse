@@ -5,14 +5,14 @@ public class LessThanInterpreter extends OperatorInterpreter{
 	public final static LessThanInterpreter INSTANCE = new LessThanInterpreter();
 	
 	private LessThanInterpreter(){
-		representation.add(" LessThan ");
-		representation.add(" < ");
+		representationList.add(" LessThan ");
+		representationList.add(" < ");
 	}
 
 	@Override
-	public String interpret(String input) {
+	protected void fillInterpretedWordListInSequence(String input) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }

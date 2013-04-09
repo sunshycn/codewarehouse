@@ -5,13 +5,13 @@ public class GreaterThanOrEqualToInterpreter extends OperatorInterpreter {
 	public final static GreaterThanOrEqualToInterpreter INSTANCE = new GreaterThanOrEqualToInterpreter();
 	
 	private GreaterThanOrEqualToInterpreter(){
-		representation.add(" >= ");
+		representationList.add(" >= ");
 	}
-	
+
 	@Override
-	public String interpret(String input) {
+	protected void fillInterpretedWordListInSequence(String input) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }

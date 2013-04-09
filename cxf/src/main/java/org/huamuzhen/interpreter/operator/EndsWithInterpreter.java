@@ -5,13 +5,13 @@ public class EndsWithInterpreter extends OperatorInterpreter{
 	public final static EndsWithInterpreter INSTANCE = new EndsWithInterpreter();
 	
 	private EndsWithInterpreter(){
-		representation.add(" EndsWith ");
+		representationList.add(" EndsWith ");
 	}
 
 	@Override
-	public String interpret(String input) {
+	protected void fillInterpretedWordListInSequence(String input) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 }

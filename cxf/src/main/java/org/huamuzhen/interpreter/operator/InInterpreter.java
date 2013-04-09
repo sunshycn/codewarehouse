@@ -5,12 +5,13 @@ public final class InInterpreter extends OperatorInterpreter {
 	public final static InInterpreter INSTANCE = new InInterpreter();
 	
 	private InInterpreter(){
-		representation.add(" IN ");
-	}
-	
-	@Override
-	public  String interpret(String input){
-		return null;
+		representationList.add(" IN ");
 	}
 
+	@Override
+	protected void fillInterpretedWordListInSequence(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
