@@ -7,11 +7,11 @@ public final class EqualsInterpreter extends OperatorInterpreter{
 	
 	private EqualsInterpreter(){
 		representationList.add(" = ");
-		representationList.add(" EQUALS ");
+		representationList.add(" Equals ");
 	}
 
 	@Override
-	protected void fillInterpretedWordListInSequence(String input) {
+	protected void fillInterpretedWordListInSequence() {
 		// TODO Auto-generated method stub
 		
 	}

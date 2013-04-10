@@ -4,13 +4,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
+import org.huamuzhen.interpreter.Interpreter;
 
 /**
  * facade class which is used to interpret sub script, sub script can not be 
  * complex query statement which contains two or more query contacted by Conditions(OR, AND)
  * 
  * */
-public final class InterpreterFacade implements Interpreter{
+public final class InterpreterFacade implements Interpreter<String,String>{
 	
 	private final Set<OperatorInterpreter> interpreterSet = new HashSet<OperatorInterpreter>();
 	
@@ -36,10 +37,10 @@ public final class InterpreterFacade implements Interpreter{
 	 * one ATTR, one Operator, one Value.
 	 * 
 	 * */
-	private final Interpreter getRelevantOperatorInterpreter(String singleScriptQueryStatement){
+	private final Interpreter<String,String> getRelevantOperatorInterpreter(String singleScriptQueryStatement){
 		for(OperatorInterpreter interpreter : interpreterSet){
 			for(String representation : interpreter.representationList){
-				if(StringUtils.containsIgnoreCase(singleScriptQueryStatement, representation)){
+				if(StringUtils.contains(singleScriptQueryStatement, representation)){
 					return interpreter;
 				}
 			}

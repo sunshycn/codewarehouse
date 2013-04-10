@@ -1,6 +1,8 @@
 package org.huamuzhen.interpreter.operator;
 
-public class DoNothingInterpreter implements Interpreter {
+import org.huamuzhen.interpreter.Interpreter;
+
+public class DoNothingInterpreter implements Interpreter<String,String> {
 	
 	public final static DoNothingInterpreter INSTANCE = new DoNothingInterpreter();
 

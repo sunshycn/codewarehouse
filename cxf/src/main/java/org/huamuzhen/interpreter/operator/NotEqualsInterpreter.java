@@ -6,11 +6,11 @@ public final class NotEqualsInterpreter extends OperatorInterpreter{
 	
 	private NotEqualsInterpreter(){
 		representationList.add(" != ");
-		representationList.add(" NOTEQUALS ");
+		representationList.add(" NotEquals ");
 	}
 
 	@Override
-	protected void fillInterpretedWordListInSequence(String input) {
+	protected void fillInterpretedWordListInSequence() {
 		
 		
 	}

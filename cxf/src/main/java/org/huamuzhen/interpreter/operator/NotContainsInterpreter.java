@@ -9,7 +9,7 @@ public class NotContainsInterpreter extends OperatorInterpreter {
 	}
 
 	@Override
-	protected void fillInterpretedWordListInSequence(String input) {
+	protected void fillInterpretedWordListInSequence() {
 		// TODO Auto-generated method stub
 		
 	}

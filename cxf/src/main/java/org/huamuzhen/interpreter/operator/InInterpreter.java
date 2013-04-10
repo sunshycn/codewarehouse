@@ -5,11 +5,11 @@ public final class InInterpreter extends OperatorInterpreter {
 	public final static InInterpreter INSTANCE = new InInterpreter();
 	
 	private InInterpreter(){
-		representationList.add(" IN ");
+		representationList.add(" In ");
 	}
 
 	@Override
-	protected void fillInterpretedWordListInSequence(String input) {
+	protected void fillInterpretedWordListInSequence() {
 		// TODO Auto-generated method stub
 		
 	}
