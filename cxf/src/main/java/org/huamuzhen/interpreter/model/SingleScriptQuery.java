@@ -1,6 +1,6 @@
 package org.huamuzhen.interpreter.model;
 
-public class SingleScriptQueryStatement {
+public class SingleScriptQuery {
 	
 	private String attribute;
 	

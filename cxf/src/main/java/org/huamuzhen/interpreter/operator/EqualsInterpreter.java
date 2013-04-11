@@ -1,7 +1,7 @@
 package org.huamuzhen.interpreter.operator;
 
 
-public final class EqualsInterpreter extends OperatorInterpreter{
+public class EqualsInterpreter extends OperatorInterpreter{
 	
 	public final static EqualsInterpreter INSTANCE = new EqualsInterpreter();
 	

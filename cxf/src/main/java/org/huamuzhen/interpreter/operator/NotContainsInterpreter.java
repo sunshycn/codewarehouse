@@ -10,8 +10,9 @@ public class NotContainsInterpreter extends OperatorInterpreter {
 
 	@Override
 	protected void fillInterpretedWordListInSequence() {
-		// TODO Auto-generated method stub
-		
+		interpretedWordList.add("-" + ATTR_PREFIX + singleScriptQueryStatementObj.getAttribute());
+		interpretedWordList.add(":");
+		interpretedWordList.add("*" + singleScriptQueryStatementObj.getValue() + "*");
 	}
 
 }

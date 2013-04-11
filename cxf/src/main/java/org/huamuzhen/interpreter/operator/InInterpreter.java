@@ -1,6 +1,6 @@
 package org.huamuzhen.interpreter.operator;
 
-public final class InInterpreter extends OperatorInterpreter {
+public class InInterpreter extends OperatorInterpreter {
 	
 	public final static InInterpreter INSTANCE = new InInterpreter();
 	

@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.huamuzhen.interpreter.Interpreter;
 import org.huamuzhen.interpreter.exception.InterpretException;
-import org.huamuzhen.interpreter.model.SingleScriptQueryStatement;
+import org.huamuzhen.interpreter.model.SingleScriptQuery;
 
 
 /**
@@ -25,6 +25,8 @@ import org.huamuzhen.interpreter.model.SingleScriptQueryStatement;
  * */
 public abstract class OperatorInterpreter implements Interpreter<String,String>{
 	
+	public final static String ATTR_PREFIX = "ATTR_";
+	
 	protected List<String> representationList = new ArrayList<String>(0);
 	
 	protected List<String> interpretedWordList = new ArrayList<String>(0);
@@ -35,7 +37,7 @@ public abstract class OperatorInterpreter implements Interpreter<String,String>{
 	//rightParenthesis should only exist in afterOperatorContent
 	protected int rightParenthesisCount;
 	
-	protected SingleScriptQueryStatement singleScriptQueryStatementObj;
+	protected SingleScriptQuery singleScriptQueryStatementObj;
 	
 	@Override
 	public String interpret(String singleScriptQueryStatement){

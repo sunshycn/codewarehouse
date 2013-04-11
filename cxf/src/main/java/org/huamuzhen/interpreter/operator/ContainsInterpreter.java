@@ -1,7 +1,5 @@
 package org.huamuzhen.interpreter.operator;
 
-import org.huamuzhen.interpreter.Constants;
-
 public class ContainsInterpreter extends OperatorInterpreter {
 
 	public final static ContainsInterpreter INSTANCE = new ContainsInterpreter();
@@ -14,9 +12,9 @@ public class ContainsInterpreter extends OperatorInterpreter {
 
 	@Override
 	protected void fillInterpretedWordListInSequence() {
-		interpretedWordList.add(Constants.ATTR_PREFIX + singleScriptQueryStatementObj.getAttribute());
+		interpretedWordList.add(ATTR_PREFIX + singleScriptQueryStatementObj.getAttribute());
 		interpretedWordList.add(":");
-		interpretedWordList.add(singleScriptQueryStatementObj.getValue());
+		interpretedWordList.add("*" + singleScriptQueryStatementObj.getValue() + "*");
 	}
 	
 }
