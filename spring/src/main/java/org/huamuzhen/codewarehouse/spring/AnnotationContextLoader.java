@@ -12,12 +12,12 @@ public class AnnotationContextLoader {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.register(AppContext.class);
 		context.refresh();
-		UserService service = (UserService)context.getBean(UserServiceImpl.class);
-		UserService service2 = (UserService)context.getBean(UserServiceImpl.class);
-		
+		UserService service = (UserServiceImpl)context.getBean(UserServiceImpl.class);
+		UserService service2 = (UserServiceImpl)context.getBean("springUserService");
+		// should be true
 		System.out.println(service == service2);
 		
-		
+		service.get();
 	}
 
 }
