@@ -18,6 +18,11 @@ public class RandomUtils {
 		return list;
 	}
 	
+	public static Double[] getRandomNumericArray(int min, int max, int quantity){
+		
+		return (Double[])getRandomNumericList(min, max,quantity).toArray(new Double[quantity]);
+	}
+	
 	public static void main(String args[]){
 		List<Double> list = getRandomNumericList(1,10000,100000);
 		
