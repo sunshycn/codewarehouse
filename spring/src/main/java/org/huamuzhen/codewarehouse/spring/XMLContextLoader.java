@@ -11,10 +11,10 @@ public class XMLContextLoader {
 	public static void main(String args[]) {
 		System.out.println("context Loading");
 		ApplicationContext context  = new ClassPathXmlApplicationContext("application-context.xml");
-		User user1 = (User)context.getBean("user");
+	/*	User user1 = (User)context.getBean("user");
 		UserServiceImpl userService = (UserServiceImpl)context.getBean("userService");
 		
-		userService.printUserName(user1);
+		userService.printUserName(user1);*/
 		
 		
 	}
