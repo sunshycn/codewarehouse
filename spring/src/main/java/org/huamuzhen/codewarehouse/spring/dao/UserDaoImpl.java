@@ -18,7 +18,7 @@ System.out.println(this + " update " + user);
 
 	@Override
 	public void get(String id){
-System.out.println(" call get");		
+System.out.println("trying to get id:" + id);		
 	}
 
 }

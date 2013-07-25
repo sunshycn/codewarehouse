@@ -19,7 +19,7 @@ public class AnnotationContextLoader {
 		// should be true
 		System.out.println(service == service2);
 		
-		service.get();
+		service.get("123");
 	}
 
 }

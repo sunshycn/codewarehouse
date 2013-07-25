@@ -16,8 +16,12 @@ public class UserServiceImpl implements UserService {
 		throw new RuntimeException("exception");
 	}
 	
-	public void get(){
+	public void get(String id){
 		userDao.get("111");
+	}
+
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
 	}
 
 }
