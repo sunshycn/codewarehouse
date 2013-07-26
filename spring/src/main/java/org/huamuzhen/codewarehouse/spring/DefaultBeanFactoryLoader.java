@@ -23,6 +23,9 @@ public class DefaultBeanFactoryLoader {
 		BeanFactory container = (BeanFactory)initContainer(beanFactory);
 		UserService userService = (UserService)container.getBean("userService");
 		userService.get("234");
+		UserService userService2 = (UserService)container.getBean("userService");
+		// default, it is singleton
+System.out.println(userService == userService2);
 		
 	}
 
