@@ -3,6 +3,7 @@ package org.huamuzhen.codewarehouse.spring.service;
 import org.huamuzhen.codewarehouse.spring.dao.UserDao;
 import org.huamuzhen.codewarehouse.spring.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service("userService")
@@ -17,7 +18,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	public void get(String id){
-		userDao.get("111");
+		userDao.get(id);
 	}
 
 	public void setUserDao(UserDao userDao) {
