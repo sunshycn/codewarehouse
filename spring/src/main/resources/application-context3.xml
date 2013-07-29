@@ -9,7 +9,7 @@
 
 
 
-<bean id="userDao" class="org.huamuzhen.codewarehouse.spring.dao.UserDaoImpl"></bean>
+<bean id="userDao" class="org.huamuzhen.codewarehouse.spring.dao.UserDaoImpl" scope="step"></bean>
 
 <bean id="userService" class="org.huamuzhen.codewarehouse.spring.service.UserServiceImpl">
 	<property name="userDao">
