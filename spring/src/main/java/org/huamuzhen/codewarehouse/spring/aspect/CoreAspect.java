@@ -14,9 +14,9 @@ public class CoreAspect {
 	public void aroundServiceHandle(ProceedingJoinPoint joinpoint) throws Throwable{
 	
 		try{
-		System.out.println("before method");
+	//	System.out.println("before method");
 		joinpoint.proceed();
-		System.out.println("after method");
+	//	System.out.println("after method");
 		}finally{
 			System.out.println("finally");
 		}

@@ -11,6 +11,6 @@
 <context:component-scan base-package="org.huamuzhen.codewarehouse.spring.*" />
 <aop:aspectj-autoproxy />
 
-
+<bean id="bean1" class="org.huamuzhen.codewarehouse.spring.bean.Bean1" init-method="initMethod" destroy-method="destroyMethod" />
 
 </beans>
