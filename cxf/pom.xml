@@ -14,6 +14,10 @@
     <name>codewarehouse-cxf</name>
 	<packaging>war</packaging>
 	
+	<properties>
+		<spring.version>3.2.3.RELEASE</spring.version>
+	</properties>
+	
 	<build>
 		<finalName>cxf-web</finalName>
 	</build>
@@ -39,11 +43,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-asm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
