@@ -40,6 +40,7 @@ public class SumTask extends RecursiveTask<Double> {
 	}
 	
 	public static void main(String args[]){
+		// current setting will make there are 2 threads running compare to 1 thread running.
 		Double[] array = RandomUtils.getRandomNumericArray(0, 100, 1900000);
 		ForkJoinPool forkJoinPool = new ForkJoinPool();
 		System.out.println(forkJoinPool.getActiveThreadCount() + " cores found");
