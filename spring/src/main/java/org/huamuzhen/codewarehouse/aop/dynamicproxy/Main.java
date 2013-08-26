@@ -18,7 +18,10 @@ public class Main {
 	    // proxy-class call    
 	    proxyBusiness.doSth2("yl91418");   
 	    ((Business1) proxyBusiness).doSth1();
-
+	    
+	    System.out.println(proxyBusiness instanceof BusinessImpl);
+	    System.out.println(proxyBusiness instanceof Business1);
+	    System.out.println(proxyBusiness instanceof Business2);
 	}
 
 }

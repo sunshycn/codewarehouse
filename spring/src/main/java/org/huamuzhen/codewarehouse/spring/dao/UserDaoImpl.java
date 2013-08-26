@@ -1,9 +1,10 @@
 package org.huamuzhen.codewarehouse.spring.dao;
 
 import org.huamuzhen.codewarehouse.spring.entity.User;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Repository;
 
+
+@Repository("userDao")
 public class UserDaoImpl implements UserDao {
 	
 	@Override
