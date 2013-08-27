@@ -12,9 +12,9 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 	
-	public void printUserName(User user){
-		System.out.println(user.getName());
-		throw new RuntimeException("exception");
+	public void printUserName(User user) {
+		//System.out.println(user.getName());
+		throw new RuntimeException("runtime");
 	}
 	
 	public void get(String id){

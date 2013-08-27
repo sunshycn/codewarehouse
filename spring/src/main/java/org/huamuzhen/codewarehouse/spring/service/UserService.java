@@ -1,7 +1,9 @@
 package org.huamuzhen.codewarehouse.spring.service;
 
+import org.huamuzhen.codewarehouse.spring.entity.User;
+
 public interface UserService {
 	
-	public void get(String id);
+ void get(String id);
 
 }
