@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+
+	<batch:job id="helloJob1" incrementer="idIncrementerJob1">
+		<batch:flow id="job1.flow1" parent="helloFlow1" />
+	</batch:job>
+	<batch:flow id="helloFlow1">
+		<batch:step id="flow1.step1" parent="helloStep1" />
+	</batch:flow>
+	<batch:step id="helloStep1">
+		<batch:tasklet>
+				<batch:chunk reader="itemReader1" processor="itemProcessor1" writer="itemWriter1" commit-interval="10"></batch:chunk>
+		</batch:tasklet>
+	</batch:step>
+	
+	<bean id="itemReader1" class="org.huamuzhen.codewarehouse.reader.ItemReader1" scope="step">
+		<property name="maxOuter" value="#{jobParameters[maxOuter]}" />
+	</bean>
+	<bean id="itemWriter1" class="org.huamuzhen.codewarehouse.writer.ItemWriter1" scope="step"></bean>
+	<bean id="itemProcessor1" class="org.huamuzhen.codewarehouse.processor.ItemProcessor1" scope="step"></bean>
+	<!--  -->
+	
+	
+	
+	<bean id="idIncrementerJob1" class="org.springframework.batch.core.launch.support.RunIdIncrementer" />
+	
+</beans>
