@@ -12,7 +12,8 @@ public class Main {
 		Collection<Integer> intCollection = new ArrayList<Integer>();
 		intCollection.add(1);
 		intCollection.add(2);
-		Collection<String> strCollection = CollectionUtils.transform(intCollection, new IntToString());
+		intCollection.add(3);
+		Collection<String> strCollection = CollectionUtils.transform(intCollection);
 		System.out.println(strCollection);
 
 	}
